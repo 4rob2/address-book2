@@ -11,3 +11,17 @@ describe('Contact', function() {
     expect(testContact.fullName()).to.equal("Sherlock Holmes");
   });
 });
+
+describe('address', function() {
+  it("creates a new address with the given specs", function() {
+    var testAddress = new Address("123 Main St", "Test City", "Test State");
+    expect(testAddress.street).to.equal("123 Main St");
+    expect(testAddress.city).to.equal("Test City");
+    expect(testAddress.state).to.equal("Test State");
+  });
+
+  it("creates a full length string address", function() {
+    var testAddress = new Address("123 Main St", "Test City", "Test State");
+    expect(testAddress.fullAddress()).to.equal("123 Main St, Test City, Test State");
+  });
+});
